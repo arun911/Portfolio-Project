@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Jobs.apps.JobsConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -72,11 +74,15 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+import os
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'Portfoliodb',
+        'USER':'postgres',
+        'PASSWORD':'Iamarun1998@',
+        'HOST':'localhost',
+        'PORT':'5432',
     }
 }
 
@@ -118,3 +124,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = str(os.path.join(BASE_DIR,"media"))
+MEDIA_URL = '/media/'
