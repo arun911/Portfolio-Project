@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,7 +123,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+STATICFILES_DIRS=[
+   os.path.join(BASE_DIR,'Portfolio/static/')
+]
+STATIC_ROOT= os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
 MEDIA_ROOT = str(os.path.join(BASE_DIR,"media"))
 MEDIA_URL = '/media/'
